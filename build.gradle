@@ -30,6 +30,7 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testCompileOnly 'org.junit.jupiter:junit-jupiter'
+	implementation group: 'org.apache.tomcat', name: 'tomcat-jdbc'
 }
 
 test {
