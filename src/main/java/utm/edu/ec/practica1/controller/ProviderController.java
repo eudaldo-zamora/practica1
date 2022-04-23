@@ -11,7 +11,6 @@ public class ProviderController {
     private ISalesProviderService salesService;
 
 
-
     @PostMapping()
     public void saveSales(@RequestBody Ventas sales) {
         salesService.saveSales(sales);
