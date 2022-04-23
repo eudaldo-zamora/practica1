@@ -3,15 +3,12 @@ package utm.edu.ec.practica1.entity;
 import lombok.Builder;
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.UUID;
 
 @Data
 @Entity
-@Builder
+
 public class Ventas {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -22,5 +19,11 @@ public class Ventas {
     private String NFact;
     private String amount;
     private String total;
+    @OneToOne
+    @JoinColumn(name = "provider_id")
+    private Provider provider;
+    @ManyToOne
+    @JoinColumn(name = "product_id")
+    private Product product;
 
 }
