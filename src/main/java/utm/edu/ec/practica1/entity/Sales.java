@@ -3,6 +3,7 @@ package utm.edu.ec.practica1.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -19,4 +20,5 @@ public class Sales {
     private List<Product> producto;
     private Integer cantidad;
     private Double total;
+    private Date fecha;
 }
