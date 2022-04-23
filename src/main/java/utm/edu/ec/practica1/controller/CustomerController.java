@@ -27,6 +27,5 @@ public class CustomerController {
 
     @DeleteMapping()
     public void saveCustomer(@RequestParam UUID id) {
-
     }
 }
