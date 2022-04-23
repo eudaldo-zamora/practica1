@@ -10,7 +10,6 @@ public class ProviderController {
     @Autowired
     private ISalesProviderService salesService;
 
-
     @PostMapping()
     public void saveSales(@RequestBody Ventas sales) {
         salesService.saveSales(sales);
