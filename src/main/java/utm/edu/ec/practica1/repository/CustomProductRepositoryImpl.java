@@ -22,7 +22,7 @@ public class CustomProductRepositoryImpl implements CustomProductRepository{
         List<Predicate> predicates = new ArrayList<>();
 
         Path<Double> valuePath = product.get("value");
-        Path<String> namePath = product.get("name");
+        Path<String> namePath = product.get("names");
         predicates.add(cb.equal(valuePath, value));
 //        predicates.add(cb.like(namePath, "%3"));
 
