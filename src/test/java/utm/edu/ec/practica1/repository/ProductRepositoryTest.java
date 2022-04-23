@@ -6,6 +6,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import utm.edu.ec.practica1.entity.Customer;
 import utm.edu.ec.practica1.entity.Product;
 
 import java.util.List;
@@ -19,8 +20,14 @@ public class ProductRepositoryTest {
 
     @Test
     public void shouldGetProductsByValue() {
-        Product product = Product.builder().name("product 1").value(25.15).build();
-        productRepository.save(product);
+        Product productToSave = new Product();
+        productToSave.setName("product 1");
+        productToSave.setDescription(" ");
+        productToSave.setValue(25.15);
+        //Product product = Product.builder().name("product 1").value(25.15).build();
+
+        productRepository.save(productToSave);
+
 
         List<Product> listProduct = productRepository.findProductByValue(25.15);
         Assertions.assertFalse(listProduct.isEmpty(), "should return some elements");
