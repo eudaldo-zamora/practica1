@@ -5,9 +5,11 @@ import org.springframework.stereotype.Service;
 import utm.edu.ec.practica1.entity.Product;
 import utm.edu.ec.practica1.repository.IProductRepository;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
+@Transactional
 public class ProductService implements IProductService {
 
     @Autowired

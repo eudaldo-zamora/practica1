@@ -1,6 +1,7 @@
 package utm.edu.ec.practica1.repository;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import utm.edu.ec.practica1.entity.Product;
 
 import javax.persistence.EntityManager;
@@ -21,9 +22,12 @@ public class CustomProductRepositoryImpl implements CustomProductRepository{
         List<Predicate> predicates = new ArrayList<>();
 
         Path<Double> valuePath = product.get("value");
+        Path<String> namePath = product.get("name");
         predicates.add(cb.equal(valuePath, value));
+//        predicates.add(cb.like(namePath, "%3"));
 
-        query.select(product).where(cb.or(predicates.toArray(new Predicate[0])));
+        query.select(product).where(cb.and(predicates
+                .toArray(new Predicate[0]))).orderBy((cb.desc(valuePath)));
         return entityManager.createQuery(query).getResultList();
     }
 }

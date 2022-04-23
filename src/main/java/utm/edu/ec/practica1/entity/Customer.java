@@ -2,11 +2,9 @@ package utm.edu.ec.practica1.entity;
 
 import lombok.Builder;
 import lombok.Data;
+import org.springframework.lang.NonNull;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.UUID;
 
 @Data
@@ -17,6 +15,7 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
+    @Column(nullable = false)
     private String name;
     private String lastname;
     private String phone;
