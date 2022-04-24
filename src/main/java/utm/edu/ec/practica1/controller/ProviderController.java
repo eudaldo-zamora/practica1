@@ -11,6 +11,7 @@ import java.util.List;
 @RequestMapping(path="/provider")
 public class ProviderController {
 
+
 	@Autowired
 	private IProviderService providerService;
 
