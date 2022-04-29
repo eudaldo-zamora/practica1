@@ -2,7 +2,6 @@ package utm.edu.ec.practica1.entity;
 
 import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,13 +11,15 @@ import java.util.UUID;
 
 @Data
 @Entity
-public class Product {
-        @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
-    private String name;
-    private String description;
-    private Double value;
-
-
+public class Provider {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private UUID id;
+	private String name;
+	private String contact;
+	private String ruc;
+	private String phone;
+	private String address;
+	private String email;
+	private String bank;
 }

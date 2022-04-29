@@ -18,10 +18,11 @@ public class CustomerRepositoryTest {
 
     @Test
     public void shouldCreateUser() {
-        Customer customerToSave = Customer.builder()
-                .name("Name").address("Address")
-                .email("email@email.com").phone("052000000")
-                .build();
+        Customer customerToSave = new Customer();
+        customerToSave.setName("Name");
+        customerToSave.setAddress("Address");
+        customerToSave.setEmail("email@email.com");
+        customerToSave.setPhone("052000000");
 
         customerRepository.save(customerToSave);
 
